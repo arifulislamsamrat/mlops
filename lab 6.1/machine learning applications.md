@@ -51,6 +51,26 @@ mkdir service_a service_b
 ```
 
 ---
+## Understanding the Communication Flow
+
+![communication flow.drawio.png](images/communication_flow.drawio.png)
+
+###  What Happens Step by Step
+
+1. **Client sends request to Service A**
+    - POST to `http://localhost:8000/process`
+    - Includes data and forward_to_model flag
+2. **Service A processes the request**
+    - Logs the incoming data
+    - Checks the `forward_to_model` flag
+3. **If forwarding is enabled**
+    - Service A makes HTTP request to Service B
+    - Service B processes the prediction request
+    - Service B returns prediction result
+    - Service A combines its status with Service B's response
+4. **Service A returns final response**
+    - Either just the logging status
+    - Or combined status + prediction result
 
 ## Step 2: Implement Service A (Input Logger)
 
@@ -311,26 +331,7 @@ curl http://localhost:8001/health
 
 ```
 
-## **Step-06 Understanding the Communication Flow**
 
-![communication flow.drawio.png](images/communication_flow.drawio.png)
-
-### 6.1 What Happens Step by Step
-
-1. **Client sends request to Service A**
-    - POST to `http://localhost:8000/process`
-    - Includes data and forward_to_model flag
-2. **Service A processes the request**
-    - Logs the incoming data
-    - Checks the `forward_to_model` flag
-3. **If forwarding is enabled**
-    - Service A makes HTTP request to Service B
-    - Service B processes the prediction request
-    - Service B returns prediction result
-    - Service A combines its status with Service B's response
-4. **Service A returns final response**
-    - Either just the logging status
-    - Or combined status + prediction result
 
 ### Challenges in ML Microservices
 
