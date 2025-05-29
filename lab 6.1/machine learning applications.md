@@ -53,7 +53,7 @@ mkdir service_a service_b
 ---
 ## Understanding the Communication Flow
 
-![communication flow.drawio.png](images/ml%20microservice%20interaction%20flow-communication%20flow%20in%20microservices.svg)
+![communication flow.drawio.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/c68739783448b0b89e3ddc42fd2c3116c3e31c9a/lab%206.1/images/ml%20microservice%20interaction%20flow-communication%20flow%20in%20microservices.svg)
 
 ###  What Happens Step by Step
 
@@ -260,7 +260,7 @@ python main.py
 
 You should see output like:
 
-![server starting output.drawio.png](images/server_starting_output.drawio.png)
+![server starting output.drawio.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.1/images/server_starting_output.drawio.png)
 
 ### 4.2 Install Dependencies and Start Service B
 
@@ -274,7 +274,7 @@ python main.py
 
 You should see output like:
 
-![service b output.drawio.png](images/service_b_output.drawio.png)
+![service b output.drawio.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.1/images/service_b_output.drawio.png)
 
 ---
 
@@ -294,7 +294,7 @@ curl -X POST -H "Content-Type: application/json" \
 
 Expected result:
 
-![test service A without forwarding.drawio.png](images/test_service_A_without_forwarding.drawio.png)
+![test service A without forwarding.drawio.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.1/images/test_service_A_without_forwarding.drawio.png)
 
 **Test Service A with forwarding to Service B:**
 
@@ -307,7 +307,7 @@ curl -X POST -H "Content-Type: application/json" \
 
 Expected response:
 
-![service A to B.drawio.png](images/service_A_to_B.drawio.png)
+![service A to B.drawio.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.1/images/service_A_to_B.drawio.png)
 
 **Test Service B directly:**
 
@@ -320,7 +320,7 @@ curl -X POST -H "Content-Type: application/json" \
 
 Expected response:
 
-![service b to a .drawio.png](images/service_b_to_a_.drawio.png)
+![service b to a .drawio.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.1/images/service_b_to_a_.drawio.png)
 
 **Test health endpoints:**
 
