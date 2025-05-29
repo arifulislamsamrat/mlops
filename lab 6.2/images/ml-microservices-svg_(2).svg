@@ -1,0 +1,134 @@
+<svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Arrow markers -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" fill="#333">
+      <polygon points="0 0, 10 3, 0 6"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#000">
+    ML Microservices Architecture
+  </text>
+  
+  <!-- Docker Network Container -->
+  <rect x="50" y="80" width="900" height="480" rx="10" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="70" y="110" font-family="Arial, sans-serif" font-size="14" fill="#495057" font-weight="500">
+    Docker Network: ml-microservices-network
+  </text>
+  
+  <!-- External Client -->
+  <g transform="translate(50, 280)">
+    <rect x="0" y="0" width="100" height="60" rx="5" fill="#e9ecef" stroke="#333" stroke-width="2"/>
+    <text x="50" y="35" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Client</text>
+  </g>
+  
+  <!-- Service A -->
+  <g transform="translate(250, 200)">
+    <!-- Container -->
+    <rect x="0" y="0" width="250" height="220" rx="5" fill="#fff" stroke="#007bff" stroke-width="2"/>
+    
+    <!-- Header -->
+    <rect x="0" y="0" width="250" height="40" rx="5" fill="#007bff"/>
+    <text x="125" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      Service A
+    </text>
+    
+    <!-- Container name -->
+    <text x="125" y="65" font-family="monospace" font-size="12" text-anchor="middle" fill="#000" font-weight="500">
+      ml-service-a
+    </text>
+    
+    <!-- Port -->
+    <rect x="10" y="80" width="230" height="25" rx="3" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+    <text x="125" y="97" font-family="monospace" font-size="11" text-anchor="middle" fill="#000">
+      Port: 8000
+    </text>
+    
+    <!-- Features -->
+    <text x="20" y="130" font-family="Arial, sans-serif" font-size="12" fill="#212529">• Input Logger</text>
+    <text x="20" y="150" font-family="Arial, sans-serif" font-size="12" fill="#212529">• API Gateway</text>
+    <text x="20" y="170" font-family="Arial, sans-serif" font-size="12" fill="#212529">• Request Forwarding</text>
+    
+    <!-- Health -->
+    <circle cx="220" cy="195" r="5" fill="#28a745"/>
+    <text x="195" y="200" font-family="Arial, sans-serif" font-size="10" fill="#28a745">OK</text>
+  </g>
+  
+  <!-- Service B -->
+  <g transform="translate(600, 200)">
+    <!-- Container -->
+    <rect x="0" y="0" width="250" height="220" rx="5" fill="#fff" stroke="#dc3545" stroke-width="2"/>
+    
+    <!-- Header -->
+    <rect x="0" y="0" width="250" height="40" rx="5" fill="#dc3545"/>
+    <text x="125" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      Service B
+    </text>
+    
+    <!-- Container name -->
+    <text x="125" y="65" font-family="monospace" font-size="12" text-anchor="middle" fill="#000" font-weight="500">
+      ml-service-b
+    </text>
+    
+    <!-- Port -->
+    <rect x="10" y="80" width="230" height="25" rx="3" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+    <text x="125" y="97" font-family="monospace" font-size="11" text-anchor="middle" fill="#000">
+      Port: 8001
+    </text>
+    
+    <!-- Features -->
+    <text x="20" y="130" font-family="Arial, sans-serif" font-size="12" fill="#212529">• ML Model v2.1.0</text>
+    <text x="20" y="150" font-family="Arial, sans-serif" font-size="12" fill="#212529">• Classification</text>
+    <text x="20" y="170" font-family="Arial, sans-serif" font-size="12" fill="#212529">• 8 Animal Classes</text>
+    
+    <!-- Health -->
+    <circle cx="220" cy="195" r="5" fill="#28a745"/>
+    <text x="195" y="200" font-family="Arial, sans-serif" font-size="10" fill="#28a745">OK</text>
+  </g>
+  
+  <!-- Connections -->
+  <!-- Client to Service A -->
+  <g>
+    <path d="M 150 310 L 250 310" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <!-- Animated dot -->
+    <circle r="4" fill="#007bff">
+      <animateMotion dur="2s" repeatCount="indefinite">
+        <mpath href="#path1"/>
+      </animateMotion>
+    </circle>
+    <path id="path1" d="M 150 310 L 250 310" stroke="none" fill="none"/>
+  </g>
+  <text x="200" y="300" font-family="Arial, sans-serif" font-size="11" fill="#000" text-anchor="middle">HTTP</text>
+  <text x="200" y="330" font-family="Arial, sans-serif" font-size="10" fill="#495057" text-anchor="middle">:8000</text>
+  
+  <!-- Service A to Service B -->
+  <g>
+    <path d="M 500 310 L 600 310" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <!-- Animated dot -->
+    <circle r="4" fill="#dc3545">
+      <animateMotion dur="1.5s" repeatCount="indefinite">
+        <mpath href="#path2"/>
+      </animateMotion>
+    </circle>
+    <path id="path2" d="M 500 310 L 600 310" stroke="none" fill="none"/>
+  </g>
+  <text x="550" y="300" font-family="Arial, sans-serif" font-size="11" fill="#000" text-anchor="middle">HTTP</text>
+  <text x="550" y="330" font-family="monospace" font-size="10" fill="#495057" text-anchor="middle">service-b:8001</text>
+  
+  <!-- Environment Variables -->
+  <g transform="translate(250, 450)">
+    <rect x="0" y="0" width="250" height="60" rx="3" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+    <text x="10" y="20" font-family="monospace" font-size="10" fill="#495057">SERVICE_B_URL=http://service-b:8001</text>
+    <text x="10" y="35" font-family="monospace" font-size="10" fill="#495057">LOG_LEVEL=INFO</text>
+    <text x="10" y="50" font-family="monospace" font-size="10" fill="#495057">depends_on: service-b (healthy)</text>
+  </g>
+  
+  <!-- Docker info -->
+  <text x="500" y="540" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#495057">
+    Docker Compose v3.8 | Restart: unless-stopped
+  </text>
+</svg>
