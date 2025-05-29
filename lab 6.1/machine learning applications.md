@@ -53,7 +53,7 @@ mkdir service_a service_b
 ---
 ## Understanding the Communication Flow
 
-![communication flow.drawio.png](images/communication_flow.drawio.png)
+![communication flow.drawio.png](images/ml%20microservice%20interaction%20flow-communication%20flow%20in%20microservices.svg)
 
 ###  What Happens Step by Step
 
