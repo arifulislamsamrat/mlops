@@ -828,11 +828,11 @@ curl http://localhost:8001/health
 
 After docker-compose build ,we will start our services .And we will get a terminal prompt to goto port 8000 and 8001. 
 
-![image.png](image.png)
+![docker up](image.png)
 
 By using docker-compose ps we will see detail information -
 
-![image.png](image%201.png)
+![docker ps](image%201.png)
 
 ### 5.2 Test the Pipeline
 
@@ -858,15 +858,15 @@ curl -X POST -H "Content-Type: application/json" \
 
 When we test the service A without ML forwarding it will be resulted like this -
 
-![image.png](image%202.png)
+![local-curl-8000](image%202.png)
 
 for service B-
 
-![image.png](image%203.png)
+![local-curl-service-b](image%203.png)
 
 Result of ML pipeline -
 
-![image.png](image%204.png)
+![pipeline-curl](image%204.png)
 
 ## Step 06: AWS deployment with pulumi
 
@@ -973,11 +973,11 @@ cd pulumi
     
     If You don’t have pulumi account open it And create a access token 
     
-    ![image.png](image%205.png)
+    ![pulumi-setup-aws.png](image%205.png)
     
     click that link and give a description and create access token
     
-    ![image.png](image%206.png)
+    ![pulumi-token.png](image%206.png)
     
     After entering the token and  When prompted:
     
@@ -988,7 +988,7 @@ cd pulumi
 
      toolchain should  select pip and then use your region
 
-![image.png](image%207.png)
+![toolchain-pip-select.png](image%207.png)
 
 1. **Install Python dependencies**:
     
@@ -1105,7 +1105,7 @@ pulumi preview
 
 So after previewing we wiill see these preview 
 
-![image.png](image%208.png)
+![pulumi-preview.png](image%208.png)
 
 **Deploy the infrastructure**:
 
@@ -1115,7 +1115,7 @@ pulumi up
 
 Confirm the deployment when prompted. Then make sure you entered the update . It will give us the public ip 
 
-![image.png](image%209.png)
+![public-ip.png](image%209.png)
 
 Connecting with ssh
 
@@ -1126,7 +1126,7 @@ ssh -i poridhi-key ubuntu@<your-public-ip>  #use public-key you got from pulumi 
 
 So now we are on the AWS cli
 
-![image.png](image%2010.png)
+![aws-console.png](image%2010.png)
 
 Now we are all set we will install docker
 
@@ -1166,7 +1166,7 @@ sudo docker-compose up -d
 
 This will clone our repository and dockerize all services .we can check with ***sudo docker-compose ps***
 
-![image.png](image%2011.png)
+![aws-cli-docker.png](image%2011.png)
 
 # Accessing Your Deployed Services Using Postman
 
@@ -1181,11 +1181,11 @@ This will clone our repository and dockerize all services .we can check with ***
         ```
         
     
-    ![image.png](image%2012.png)
+    ![postman-service-a.png](image%2012.png)
     
     After it we will see the responses. And If I want to check health we will send /health 
     
-    ![image.png](image%2013.png)
+    ![postman-service-a-health.png](image%2013.png)
     
     - To test **`service_b`**, use:
         
@@ -1199,11 +1199,11 @@ This will clone our repository and dockerize all services .we can check with ***
         
 4. **Click "Send"** to see the response from each service.
 
-![image.png](image%2014.png)
+![postmen-service-b.png](image%2014.png)
 
 To see the  model_info    we will use http://public_ip_of_your_AWS_ubuntu_instance:8001/model_info 
 
-![image.png](8bd27b95-54ab-4f3a-8379-b086269ffb36.png)
+![postmen-service-b-model-info.png](8bd27b95-54ab-4f3a-8379-b086269ffb36.png)
 
 If forget your public ip then use ***ifconfig.me***  
 
