@@ -36,7 +36,7 @@ For machine learning applications specifically, monolithic architectures can be 
 
 Microservices architecture represents a paradigm shift in application design, decomposing what would traditionally be a monolithic application into a collection of smaller, independent services that work together. Each microservice is responsible for a specific business capability and operates as a separate entity with its own codebase, database (if needed), and deployment pipeline.
 
-![monolithic vs microservices architecture.drawio (1).png](images/monolithic%20vs%20microservices%20architecture.drawio.png)
+![monolithic vs microservices architecture.png](images/monolithic%20vs%20microservices%20architecture.svg)
 
 This architectural approach is built on several key principles:
 
@@ -178,7 +178,7 @@ While REST is versatile, it's not optimal for all communication patterns:
 - Can be verbose for complex data structures
 - Not ideal for high-frequency, low-latency requirements
 
-![monolithic vs microservices architecture-communication patterns.drawio (1).png](images/api-grpc.png)
+![monolithic vs microservices architecture-communication patterns.drawio (1).png](images/communication%20patterns.svg)
 
 ### gRPC (Google Remote Procedure Call)
 
@@ -323,7 +323,7 @@ Stateless services do not store client state between requests. Each request cont
 
 **Resource Efficiency**: Instances can be added or removed based on demand without concerns about state transfer.
 
-![images/monolithic vs microservices architecture-stateful vs stateless.drawio.png](images/stateful%20vs%20stateless.drawio.png)
+![images/monolithic vs microservices architecture-stateful vs stateless.drawio.png](images/stateful%20vs%20stateless.svg)
 
 ### Examples in ML Systems:
 
