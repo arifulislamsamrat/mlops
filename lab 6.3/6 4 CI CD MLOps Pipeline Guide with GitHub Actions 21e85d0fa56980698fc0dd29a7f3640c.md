@@ -38,7 +38,7 @@ The pipeline follows a **microservices pattern** with two specialized services:
 - **Monitoring Stack**: Prometheus for metrics collection and Grafana for visualization
 - **Infrastructure Management**: Pulumi provides declarative AWS resource management
 
-![architecture diagram Ci_cd with github actions.svg](images/architecture_diagram_Ci_cd_with_github_actions.svg)
+![architecture diagram Ci_cd with github actions.svg](https://raw.githubusercontent.com/arifulislamsamrat/mlops/ef0f1dfb3059571ea6cde29bb6e6c8c8fc1ff437/lab%206.3/images/architecture_diagram_Ci_cd_with_github_actions.svg)
 
 ### Key Benefits of This Implementation
 
@@ -196,7 +196,7 @@ aws sts get-caller-identity
 
 ```
 
-![image.png](images/image.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image.png)
 
 ### 1.2 Create .gitignore
 
@@ -248,7 +248,7 @@ ssh-keygen -t rsa -b 4096 -f mlops-key -N ""
 
 It will create a public and private key name  mlops-key 
 
-![image.png](images/image%201.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image%201.png)
 
 ## Step 2: Creating the Microservices
 
@@ -1092,15 +1092,15 @@ Copy the ENTIRE output (including `-----BEGIN RSA PRIVATE KEY-----` and `-----EN
 - `PULUMI_ACCESS_TOKEN`: Create at https://app.pulumi.com/account/tokens
 - `SSH_PUBLIC_KEY`: Your SSH public Key
 
-![image.png](images/image%202.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image%202.png)
 
 Go to your GitHub repository page then Click on "Settings" (in the repository menu, not your profile) then In the left sidebar, click "Secrets and variables" then Click "Actions" and at end Click the green "New repository secret" button
 
-![image.png](images/image%203.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image%203.png)
 
 For pulumi Access token  goto pulumi and create project and personal access token 
 
-![image.png](images/image%204.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image%204.png)
 
 ### 5.2 Create GitHub Actions Workflow
 
@@ -1115,7 +1115,7 @@ For pulumi Access token  goto pulumi and create project and personal access toke
 
 This architecture emphasizes **simplicity and reliability** through complete infrastructure refresh on each deployment, comprehensive monitoring, and containerized service isolation.
 
-![workflow.svg](images/workflow.svg)
+![workflow.svg](https://raw.githubusercontent.com/arifulislamsamrat/mlops/ef0f1dfb3059571ea6cde29bb6e6c8c8fc1ff437/lab%206.3/images/workflow.svg)
 
 **Create `.github/workflows/deploy.yml`:**
 
@@ -2533,7 +2533,7 @@ git push
 
 **This takes about 10-15 minutes total**
 
-![image.png](images/image%205.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image%205.png)
 
 After successfully deploying your MLOps pipeline, comprehensive testing is essential to validate all services are working correctly. This guide provides a complete Postman collection and step-by-step testing process to verify your ML Inference Service, Data Ingestion Service, and Monitoring Stack.
 **** 
@@ -3647,7 +3647,7 @@ Create a new file named `MLOps_Pipeline_Collection.json` and paste the following
 4. **Choose** `MLOps_Pipeline_Collection.json`
 5. **Click "Import"** - you should see the collection appear in your sidebar
 
-![image.png](images/image%206.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image%206.png)
 
 ### 7.3.3 Verify Import Success
 
@@ -3670,7 +3670,7 @@ Create a new file named `MLOps_Pipeline_Collection.json` and paste the following
     `Current Value: http://3.0.199.135`
     
 
-![image.png](images/image%207.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image%207.png)
 
 ### 3.2 Verify Environment Variables
 
@@ -3686,33 +3686,33 @@ Create a new file named `MLOps_Pipeline_Collection.json` and paste the following
 
 **Expand "🤖 ML Inference Service"** folder and **Click "Health Check"** → **Send** → Verify ✅ status
 
-![image.png](images/image%208.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image%208.png)
 
 Now **Click "Make Prediction"** → **Send** → Check prediction value
 
-![image.png](images/image%209.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image%209.png)
 
 And the last one **Click "Get ML Metrics"** → **Send** → Verify metrics format
 
-![image.png](images/image%2010.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image%2010.png)
 
 Monitoring services should also showed status 200 both in prometheus and grafana
 
-![image.png](images/image%2011.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image%2011.png)
 
-![image.png](images/image%2012.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image%2012.png)
 
 And if we go to the website we can also see the grafana dashboard and prometheus 
 
-![image.png](images/image%2013.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image%2013.png)
 
 initial password and username is admin , admin  after logging in we will get access into grafana dashboard and can customize as needed . 
 
-![image.png](images/image%2014.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image%2014.png)
 
 also like grafana prometheus can be accessed in the 9090 endpoint . 
 
-![image.png](images/image%2015.png)
+![image.png](https://raw.githubusercontent.com/arifulislamsamrat/mlops/refs/heads/main/lab%206.3/images/image%2015.png)
 
 # Conclusion :
 
