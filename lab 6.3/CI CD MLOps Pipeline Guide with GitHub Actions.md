@@ -38,7 +38,7 @@ The pipeline follows a **microservices pattern** with two specialized services:
 - **Monitoring Stack**: Prometheus for metrics collection and Grafana for visualization
 - **Infrastructure Management**: Pulumi provides declarative AWS resource management
 
-![architecture diagram Ci_cd with github actions.svg](https://raw.githubusercontent.com/arifulislamsamrat/mlops/ef0f1dfb3059571ea6cde29bb6e6c8c8fc1ff437/lab%206.3/images/architecture_diagram_Ci_cd_with_github_actions.svg)
+![architecture diagram Ci_cd with github actions.svg](images/Ci_cd%20with%20github%20actions-full%20architecture.drawio%20(1).svg)
 
 ### Key Benefits of This Implementation
 
